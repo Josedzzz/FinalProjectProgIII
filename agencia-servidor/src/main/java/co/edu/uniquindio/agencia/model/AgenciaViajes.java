@@ -1,9 +1,11 @@
 package co.edu.uniquindio.agencia.model;
 
 import co.edu.uniquindio.agencia.exceptions.*;
+import co.edu.uniquindio.agencia.utilities.ArchivoUtils;
 import co.edu.uniquindio.agencia.utilities.EmailUtils;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.java.Log;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -16,6 +18,7 @@ import java.util.logging.SimpleFormatter;
 
 @Getter
 @Setter
+@Log
 public class AgenciaViajes {
     private String nombre;
     private ArrayList<Destino> listaDestinos;
@@ -23,6 +26,7 @@ public class AgenciaViajes {
     private ArrayList<Reserva> listaReservas;
     private ArrayList<Guia> listaGuiasTuristicos;
     private ArrayList<Cliente> listaClientes;
+    private String rutaClientes;
     private ArrayList<Administrador> listaAdministradores;
 
     //Variables que tendran la instancia de esta clase
@@ -33,23 +37,18 @@ public class AgenciaViajes {
      * Constructor que debe de ser privado para que ninguna otra clase pueda crear instancias de esta clase
      */
     private AgenciaViajes() {
-        try {
-            FileHandler fh = new FileHandler("logs.log", true);
-            fh.setFormatter( new SimpleFormatter());
-            LOGGER.addHandler(fh);
-        } catch (IOException e) {
-            LOGGER.log( Level.SEVERE, e.getMessage() );
-        }
-        LOGGER.log(Level.INFO, "Se crea una nueva instancia de la empresa");
+        inicializarLogger();
 
         this.listaDestinos = new ArrayList<Destino>();
         this.listaPaquetesTuristicos = new ArrayList<PaqueteTuristico>();
         this.listaReservas = new ArrayList<Reserva>();
         this.listaGuiasTuristicos = new ArrayList<Guia>();
         this.listaClientes = new ArrayList<Cliente>();
+        this.rutaClientes = "src/main/resources/persistencia/clientes.ser";
+        leerClientes();
         this.listaAdministradores = new ArrayList<Administrador>();
         //Quemo los datos de los administradores
-        Administrador administrador = Administrador.administradorBuilder()
+        /*Administrador administrador = Administrador.administradorBuilder()
                 .id("123")
                 .nombre("Jose")
                 .correo("josedavidamayar@gmail.com")
@@ -146,7 +145,45 @@ public class AgenciaViajes {
                 .paqueteTuristicoSeleccionado(paqueteTuristico)
                 .guia(guia)
                 .build();
-        listaReservas.add(reserva);
+        listaReservas.add(reserva);*/
+    }
+
+    /**
+     * Inicializa el logger para usarlo
+     */
+    private void inicializarLogger(){
+        try {
+            FileHandler fh = new FileHandler("logs.log", true);
+            fh.setFormatter( new SimpleFormatter());
+            log.addHandler(fh);
+        }catch (IOException e){
+            log.severe(e.getMessage() );
+        }
+    }
+
+    /**
+     * Serializa la lista de clientes
+     */
+    private void escribirClientes() {
+        try {
+            ArchivoUtils.serializarObjeto(rutaClientes, listaClientes);
+        } catch (IOException e) {
+            log.severe(e.getMessage());
+        }
+    }
+
+    /**
+     * Lee la lista de clientes
+     */
+    private void leerClientes() {
+        try {
+            ArrayList<Cliente> lista = (ArrayList<Cliente>) ArchivoUtils.deserializarObjeto(rutaClientes);
+            if (lista != null) {
+                this.listaClientes = lista;
+            }
+        } catch (Exception e) {
+            log.severe(e.getMessage());
+        }
     }
 
     /**
@@ -763,6 +800,8 @@ public class AgenciaViajes {
                     .contrasenia(contrasenia)
                     .build();
             listaClientes.add(clienteNuevo);
+            escribirClientes();
+            log.info("Cliente agregado correctamente");
             return clienteNuevo;
         }
     }

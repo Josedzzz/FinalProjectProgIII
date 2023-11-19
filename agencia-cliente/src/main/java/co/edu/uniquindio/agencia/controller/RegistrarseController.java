@@ -3,6 +3,7 @@ package co.edu.uniquindio.agencia.controller;
 import co.edu.uniquindio.agencia.app.AgenciaApp;
 import co.edu.uniquindio.agencia.exceptions.AtributosVaciosException;
 import co.edu.uniquindio.agencia.exceptions.ClienteYaExistenteException;
+import co.edu.uniquindio.agencia.model.AgenciaCliente;
 import co.edu.uniquindio.agencia.model.AgenciaViajes;
 import co.edu.uniquindio.agencia.model.Cliente;
 import javafx.event.ActionEvent;
@@ -55,7 +56,8 @@ public class RegistrarseController implements Initializable {
     private Cliente clienteSesion;
 
     //Uso de singleton
-    private final AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
+   // private final AgenciaViajes agenciaViajes = AgenciaViajes.getInstance();
+    AgenciaCliente agenciaCliente = new AgenciaCliente();
 
     public void setAgenciaApp(AgenciaApp agenciaApp) {
         this.agenciaApp = agenciaApp;
@@ -94,7 +96,7 @@ public class RegistrarseController implements Initializable {
     @FXML
     void registrarse(ActionEvent event) {
         try {
-            clienteSesion = agenciaViajes.crearCliente(
+            clienteSesion = agenciaCliente.registrarCliente(
                     txtCedula.getText(),
                     txtNombre.getText(),
                     txtCorreo.getText(),
@@ -105,10 +107,6 @@ public class RegistrarseController implements Initializable {
             mostrarMensaje("Agencia", "Registrarse", "Su registro ha sido realizado de manera exitosa", Alert.AlertType.INFORMATION);
             //Vuelve a la ventana de inicio pero con el cliente que inicio sesion
             mostrarVentanaInicio();
-        } catch (AtributosVaciosException e) {
-            mostrarMensaje("Agencia", "Registrarse", e.getMessage(), Alert.AlertType.WARNING);
-        } catch (ClienteYaExistenteException e) {
-            mostrarMensaje("Agencia", "Registrarse", e.getMessage(), Alert.AlertType.WARNING);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
