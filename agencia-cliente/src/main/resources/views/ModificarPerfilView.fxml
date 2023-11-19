@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.ModificarPerfilController">
+   <center>
+      <SplitPane dividerPositions="0.65" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #eef2f4;">
+               <children>
+                  <Label layoutX="206.0" layoutY="78.0" text="Modificar mi perfíl" textFill="#5258cb">
+                     <font>
+                        <Font name="Ubuntu" size="36.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="200.0" fitWidth="254.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/LogoPortada.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btnRegresar" layoutX="575.0" layoutY="6.0" mnemonicParsing="false" onAction="#regresar" prefHeight="33.0" prefWidth="136.0" style="-fx-background-color: #eef2f4;" text="Regresar" textFill="#5258cb">
+                     <font>
+                        <Font name="Ubuntu" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </Button>
+                  <Label layoutX="70.0" layoutY="247.0" text="Cédula:" textFill="#5258cb">
+                     <font>
+                        <Font name="Ubuntu" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtCedula" layoutX="140.0" layoutY="244.0" style="-fx-background-color: transparent; -fx-border-color: #5258cb; -fx-border-width: 0px 0px 2px 0px;">
+                     <font>
+                        <Font name="Ubuntu" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="389.0" layoutY="247.0" text="Nombre:" textFill="#5258cb">
+                     <font>
+                        <Font name="Ubuntu" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtNombre" layoutX="470.0" layoutY="244.0" style="-fx-background-color: transparent; -fx-border-color: #5258cb; -fx-border-width: 0px 0px 2px 0px;">
+                     <font>
+                        <Font name="Ubuntu" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="70.0" layoutY="322.0" text="Correo:" textFill="#5258cb">
+                     <font>
+                        <Font name="Ubuntu" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="389.0" layoutY="322.0" text="Teléfono:" textFill="#5258cb">
+                     <font>
+                        <Font name="Ubuntu" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="389.0" layoutY="392.0" text="Residencia:" textFill="#5258cb">
+                     <font>
+                        <Font name="Ubuntu" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="70.0" layoutY="392.0" text="Contraseña:" textFill="#5258cb">
+                     <font>
+                        <Font name="Ubuntu" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtCorreo" layoutX="140.0" layoutY="319.0" style="-fx-background-color: transparent; -fx-border-color: #5258cb; -fx-border-width: 0px 0px 2px 0px;">
+                     <font>
+                        <Font name="Ubuntu" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtTelefono" layoutX="476.0" layoutY="319.0" prefHeight="28.0" prefWidth="167.0" style="-fx-background-color: transparent; -fx-border-color: #5258cb; -fx-border-width: 0px 0px 2px 0px;">
+                     <font>
+                        <Font name="Ubuntu" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtContrasenia" layoutX="177.0" layoutY="389.0" prefHeight="28.0" prefWidth="136.0" style="-fx-background-color: transparent; -fx-border-color: #5258cb; -fx-border-width: 0px 0px 2px 0px;">
+                     <font>
+                        <Font name="Ubuntu" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="txtResidencia" layoutX="489.0" layoutY="389.0" prefHeight="28.0" prefWidth="152.0" style="-fx-background-color: transparent; -fx-border-color: #5258cb; -fx-border-width: 0px 0px 2px 0px;">
+                     <font>
+                        <Font name="Ubuntu" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="btnActualizar" layoutX="261.0" layoutY="493.0" mnemonicParsing="false" onAction="#actualizar" prefHeight="0.0" prefWidth="190.0" style="-fx-background-color: #5258cb;" text="Actualizar" textFill="#eef2f4">
+                     <font>
+                        <Font name="Ubuntu" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ImageView fitHeight="702.0" fitWidth="480.0" layoutX="-7.0" layoutY="-68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/AlaskaRegistro.jpeg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </center>
+</BorderPane>

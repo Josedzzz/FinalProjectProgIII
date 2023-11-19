@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.InicioController">
+   <center>
+      <SplitPane dividerPositions="0.4" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #eef2f4;">
+               <children>
+                  <Label layoutX="135.0" layoutY="175.0" text="Hermes" textFill="#5258cb">
+                     <font>
+                        <Font name="Ubuntu" size="48.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="200.0" fitWidth="254.0" layoutX="113.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/LogoPortada.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="161.0" layoutY="224.0" text="Travel Agency" textFill="#5258cb">
+                     <font>
+                        <Font name="Ubuntu" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnConocerPaquetes" layoutX="126.0" layoutY="270.0" mnemonicParsing="false" onAction="#conocerPaquetes" prefHeight="0.0" prefWidth="190.0" style="-fx-background-color: #5258cb;" text="Conocer paquetes" textFill="#eef2f4">
+                     <font>
+                        <Font name="Ubuntu" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnConocerDestinos" layoutX="126.0" layoutY="307.0" mnemonicParsing="false" onAction="#conocerDestinos" prefHeight="0.0" prefWidth="190.0" style="-fx-background-color: #5258cb;" text="Conocer destinos" textFill="#eef2f4">
+                     <font>
+                        <Font name="Ubuntu" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnIniciarSesion" layoutX="14.0" layoutY="551.0" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="33.0" prefWidth="136.0" style="-fx-background-color: #eef2f4;" text="Iniciar Sesión" textFill="#5258cb">
+                     <font>
+                        <Font name="Ubuntu" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnCalificarDestinos" layoutX="125.0" layoutY="344.0" mnemonicParsing="false" onAction="#calificarDestinos" prefHeight="0.0" prefWidth="190.0" style="-fx-background-color: #5258cb;" text="Calificar destinos" textFill="#eef2f4">
+                     <font>
+                        <Font name="Ubuntu" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnCalificarGuias" layoutX="125.0" layoutY="381.0" mnemonicParsing="false" onAction="#calificarGuias" prefHeight="0.0" prefWidth="190.0" style="-fx-background-color: #5258cb;" text="Calificar guías" textFill="#eef2f4">
+                     <font>
+                        <Font name="Ubuntu" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnVerMisReservas" layoutX="125.0" layoutY="418.0" mnemonicParsing="false" onAction="#verReservas" prefHeight="0.0" prefWidth="190.0" style="-fx-background-color: #5258cb;" text="Ver mis reservas" textFill="#eef2f4">
+                     <font>
+                        <Font name="Ubuntu" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnModificarPerfil" layoutX="125.0" layoutY="455.0" mnemonicParsing="false" onAction="#modificarPerfil" prefHeight="0.0" prefWidth="190.0" style="-fx-background-color: #5258cb;" text="Modificar perfíl" textFill="#eef2f4">
+                     <font>
+                        <Font name="Ubuntu" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnRegistrarse" layoutX="286.0" layoutY="551.0" mnemonicParsing="false" onAction="#registrarse" prefHeight="33.0" prefWidth="136.0" style="-fx-background-color: #eef2f4;" text="Registrarse" textFill="#5258cb">
+                     <font>
+                        <Font name="Ubuntu" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btnCerrarSesion" layoutX="300.0" layoutY="14.0" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="33.0" prefWidth="136.0" style="-fx-background-color: #eef2f4;" text="Cerrar Sesión" textFill="#5258cb">
+                     <font>
+                        <Font name="Ubuntu" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                  </Button>
+               </children></AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #eef2f4;">
+               <children>
+                  <ImageView fitHeight="643.0" fitWidth="686.0" layoutY="-27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/MarPortada.png" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>
